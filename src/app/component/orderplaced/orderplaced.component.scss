@@ -1,0 +1,115 @@
+.order-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use viewport height to ensure full page coverage */
+    background: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    color: #658292;
+    overflow: hidden;
+}
+
+.order-container {
+    flex-grow: 1; /* Allows container to expand and fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    padding: 2rem; /* Adjusted padding */
+}
+
+.order-bg-align-container {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0; /* Adds space above and below the image container */
+}
+
+.text-overlay {
+    position: absolute;
+
+width: 294px;
+height: 30px;
+
+
+letter-spacing: 0px;
+color: #333232;
+text-transform: capitalize;
+opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 35px;
+    margin-left: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.order-confirmed-align, .order-table {
+    width: 100%; /* Ensures full width */
+    display: flex;
+    justify-content: center;
+    
+    margin: 1rem 0; /* Adds space above and below the elements */
+}
+
+.table {
+    width: 80%; /* Adjust based on preference */
+    max-width: 600px; /* Ensures table does not get too wide */
+}
+
+.bg-head, .bg-body {
+    border: 1px solid #DCDCDC;
+}
+
+td {
+    padding: 1rem; /* Adjusted padding for better spacing */
+}
+
+.continue-shopping-button {
+    padding: 0.5rem 1rem; /* Adjusted for better button sizing */
+    background: #3371B5;
+    color: #FFFFFF;
+    border-radius: 3px;
+    border: none; /* Removes border */
+    cursor: pointer; /* Changes cursor on hover */
+}
+
+@media (max-width: 768px) {
+    .order-container {
+        padding: 1rem;
+    }
+
+    .text-overlay, .confirmed-text, .order-text {
+        font-size: smaller; /* Adjusts text size for smaller screens */
+    }
+
+    .table {
+        width: 95%; /* Allows the table to be wider on smaller screens */
+    }
+}
+
+td{
+    border: 1px solid #DCDCDC; 
+    padding-bottom: 20px;
+}
+.continue-shopping-button{
+    width: 200px;
+height: 35px;
+
+background: #3371B5 0% 0% no-repeat padding-box;
+border-radius: 3px;
+font: normal normal medium 14px/17px Lato;
+letter-spacing: 0px;
+color: #FFFFFF;
+border-width: 0px;
+}
+.order-confirmed-align{
+    top: 375px;
+left: 510px;
+width: 348px;
+height: 66px;
+/* UI Properties */
+text-align: center;
+font: normal normal normal 18px/22px Lato;
+letter-spacing: 0px;
+color: #333232;
+opacity: 1;
+}

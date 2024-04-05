@@ -1,0 +1,91 @@
+<div class="cart-container">
+
+<app-header> </app-header>
+
+<div class="cart-body">
+
+<div class="cart-container-style">
+    <div class="cart-text-style"><b>My Cart</b></div>
+   
+    <div class="book-image-info">
+    <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
+    <div class="book-info">
+      <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
+      <p class="author-name">Lukesh</p>
+      <p class="book-price">Rs.750</p>
+    </div>
+</div>
+<div class="add-remove-icons">
+  <button class="plus-icon">+</button>
+  <input type="number" class="quantity-bar">
+  <button class="minus-icon">-</button>
+ <div class="remove-text">Remove</div>
+
+</div>
+
+
+   <div >
+    <button class="place-button">Place Order</button>
+  </div>
+  </div>
+
+  <div class="user-details-box">
+    <div class="customer-text-style"><b>Customer Details</b></div>
+   
+    <form class="example-form">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="example-full-width">
+    
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" class="example-full-width">
+      </div>
+    
+      <div class="form-row">
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" class="example-full-width">
+    
+        <label for="locality">Locality</label>
+        <input type="text" id="locality" class="example-full-width">
+      </div>
+    
+      <div class="address-field">
+        <label for="address">Address</label>
+        <textarea id="address" class="example-full-width"></textarea>
+      </div>
+    
+      <div class="form-row">
+        <label for="cityTown">City/Town</label>
+        <input type="text" id="cityTown" class="example-full-width">
+    
+        <label for="landmark">LandMark</label>
+        <input type="text" id="landmark" class="example-full-width">
+      </div>
+    </form>
+  </div>
+
+  <div class="order-details-box">
+    <div class="order-header-style"><b>Order Summary</b></div>
+    
+    <div class="book-image-info">
+      <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
+      <div class="book-info">
+        <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
+        <p class="author-name">Lukesh</p>
+        <p class="book-price">Rs.750</p>
+      </div>
+  </div>
+
+  
+  
+     <div >
+      <a routerLink="/orderplaced">
+      <button class="place-button">Check Out</button>
+    </a>
+    </div>
+  </div>
+
+</div>
+
+<app-footer> </app-footer>
+</div>

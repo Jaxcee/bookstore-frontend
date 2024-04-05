@@ -1,0 +1,105 @@
+.layout-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  gap: 20px; /* Sets equal spacing between the book containers */
+  justify-content: center; /* Center-aligns the book containers */
+  padding: 20px; /* Adds some padding around the entire wrapper */
+  margin-left: -50px;
+}
+
+.book-container {
+  width: 235px; 
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* Encapsulates the book image with a #F5F5F5 background */
+.book-background {
+  display: flex;
+  justify-content: center; /* Centers the child img horizontally */
+  align-items: center; /* Centers the child img vertically */
+  background-color:#F5F5F5;
+  padding: 20px; /* Adds padding around the image */
+  
+  margin-bottom: 20px; /* Distance between the image and the book info */
+}
+
+.book-image {
+  width: 105px;
+  height: 135px;
+}
+
+.book-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px; /* Adjusted to match the new layout */
+}
+
+.book-title,
+.author-name,
+.book-price {
+  font-family: Lato; /* Keeping font specifications but simplifying */
+}
+
+.book-title {
+  font-size: 14px;
+  line-height: 17px;
+  color: #0A0102;
+  margin-bottom: 10px;
+}
+
+.author-name {
+  font-size: 10px;
+  line-height: 12px;
+  color: #9D9D9D;
+  margin-bottom: 10px;
+}
+
+.book-price {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #0A0102;
+  margin-bottom: 20px; /* Adjusted for consistent spacing */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: -10px;
+}
+
+.btn-add-wishlist, .btn-add-to-cart {
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  font-family: Lato; /* Keeping font specifications */
+}
+
+.btn-add-wishlist {
+  background-color: #A03037;
+  color: white;
+}
+
+.btn-add-to-cart {
+  background-color: #F5F5F5;
+  color: black;
+  margin-left: 10px;
+}
+
+.align{
+  display: flex;
+  flex-direction: row;
+}

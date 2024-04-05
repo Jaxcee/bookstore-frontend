@@ -1,0 +1,255 @@
+.cart-container{
+  min-height: auto;
+  position: relative;
+  
+}
+
+
+.cart-container-style {
+    position: absolute;
+    
+    top: 112px;
+    left: 177px;
+    width: 774px;
+    height: 241px;
+    background: rgba(255, 255, 255, 0.24);
+    border: 1px solid #707070;
+    border-radius: 1px;
+    
+}
+.cart-text-style{
+    margin-left: 30px;
+    margin-top: 18px;
+    top: 130px;
+    left: 213px;
+    width: 85px;
+    height: 22px;
+    text-align: left;
+    font: normal normal medium 18px/22px Lato;
+    letter-spacing: 0px;
+    color: #000000;
+
+}
+
+.book-image {
+    width: 65px;
+    height: 85px;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+  
+
+  .place-button{
+    top: 308px;
+    left: 772px;
+    width: 151px;
+    height: 35px;
+    cursor:pointer;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    color: white;
+    border: none;
+    margin-left: 595px;
+    margin-top: -50px;
+  }
+
+  .book-image-info{
+    flex-direction: row;
+    display :flex;
+  }
+  .book-title {
+    font-size: 14px;
+    line-height: 17px;
+    color: #0A0102;
+    margin-bottom: 10px;
+  }
+  
+  .author-name {
+    font-size: 10px;
+    line-height: 12px;
+    color: #9D9D9D;
+    margin-bottom: 10px;
+  }
+  
+  .book-price {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #0A0102;
+    margin-bottom: 20px; /* Adjusted for consistent spacing */
+  }
+  .book-info{
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+.plus-icon {
+  width: 24px;
+  height: 24px;
+  background: #FAFAFA 0% 0% no-repeat padding-box;
+  border: 1px solid #DBDBDB;
+  opacity: 1;
+  border-radius: 100px;
+  text-align: center;
+  margin-right: 8px; /* Add left margin to the plus icon */
+}
+
+.minus-icon {
+  width: 24px;
+  height: 24px;
+  background: #FAFAFA 0% 0% no-repeat padding-box;
+  border: 1px solid #DBDBDB;
+  opacity: 1;
+  text-align: center;
+  margin-left: 8px; /* Add right margin to the minus icon */
+}
+
+.quantity-bar {
+  width: 30px;
+  height: 20px;
+}
+
+.add-remove-icons {
+  flex-direction: row;
+  display: flex;
+  margin-left: 100px;
+  margin-top: -10px;
+}
+.remove-text{
+  margin-left: 20px;
+  margin-top: -1px;
+}
+
+.user-details-box {
+  margin-left: 180px;
+  margin-top: 400px;
+  width: 774px;
+  height: 416px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 1px;
+  opacity: 1;
+}
+
+.customer-text-style{
+  width: 115px;
+height: 18px;
+/* UI Properties */
+text-align: left;
+font: normal normal normal 15px/18px Lato;
+letter-spacing: 0px;
+color: #333232;
+opacity: 1;
+
+margin-top: 30px;
+margin-left: 30px;
+}
+
+.example-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-left: 80px;
+  margin-top:30px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px; /* Controls the space between inputs */
+}
+
+.form-row label,
+.address-field label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.example-full-width,
+.address-field textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px; /* Space between each form field */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.address-field {
+  margin-bottom: 16px;
+}
+.order-details-box {
+  position: relative;
+  top: 20px; /* Adjust as needed for spacing from the previous section */
+  left: 0; /* Aligned with the container's left edge */
+  width: 774px;
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px solid #707070;
+  border-radius: 1px;
+  padding: 20px; /* Added padding for internal spacing */
+  margin-left: 177px; /* Align with the cart container */
+  margin-top: 20px; /* Space from the previous content */
+}
+
+.additional-text-style {
+  margin-left: 30px;
+  margin-top: 18px;
+  font: normal normal medium 18px/22px Lato;
+  color: #000000;
+}
+
+.additional-content-info {
+  display: flex;
+  margin-top: 20px;
+}
+
+.additional-info {
+  margin-left: 20px;
+}
+
+.additional-image {
+  width: 65px;
+  height: 85px;
+}
+
+.additional-action-icons {
+  display: flex;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.additional-plus-icon, .additional-minus-icon {
+  width: 24px;
+  height: 24px;
+  background: #FAFAFA;
+  border: 1px solid #DBDBDB;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.additional-quantity-bar {
+  width: 30px;
+  height: 20px;
+}
+
+.additional-place-button {
+  background: #3371B5;
+  color: white;
+  border-radius: 2px;
+  border: none;
+  width: 151px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: auto; /* Aligns the button to the right */
+  margin-top: 20px; /* Spacing from the last item */
+}
+.cart-body{
+  
+    height: auto;
+    padding-bottom: 25px;
+    
+}
+.cart-container{
+  overflow: hidden;
+}
