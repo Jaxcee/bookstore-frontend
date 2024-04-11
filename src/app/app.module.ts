@@ -15,6 +15,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { OrderplacedComponent } from './component/orderplaced/orderplaced.component';
 
+import { LoginComponent } from './component/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './component/signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +29,10 @@ import { OrderplacedComponent } from './component/orderplaced/orderplaced.compon
     FooterComponent,
     BooksComponent,
     CartComponent,
-    OrderplacedComponent
+    OrderplacedComponent,
+    
+    LoginComponent,
+         SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,10 @@ import { OrderplacedComponent } from './component/orderplaced/orderplaced.compon
     MatToolbarModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,53 @@
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin-top: 100px; /* Increased from 70px to 100px */
+}
+
+  
+  .input-group {
+    margin-bottom: 15px;
+    width: 80%;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    background-color: #A03037;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color:  #be252f;
+  }
+  .redirect-signup{
+    margin-top: 10px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+  }
+  .clickhere{
+    color: #A03037;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .clickhere:hover{
+        color:#be252f;
+  }

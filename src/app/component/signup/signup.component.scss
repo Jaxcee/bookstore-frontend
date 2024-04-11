@@ -1,0 +1,72 @@
+.signup-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 70px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 80%;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .btn {
+    color: #fff;
+    background-color: #A03037;
+    
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+ 
+  .redirect-signup{
+    margin-top: 10px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+  }
+  
+  .clickhere {
+    color:  #A03037;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .clickhere:hover {
+    color: #be252f;
+  }
+  

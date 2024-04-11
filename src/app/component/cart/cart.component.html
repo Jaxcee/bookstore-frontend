@@ -1,12 +1,40 @@
-<div class="cart-container">
+<div class="cart-items-container">
 
 <app-header> </app-header>
 
 <div class="cart-body">
 
+<!-- cart.component.html -->
 <div class="cart-container-style">
-    <div class="cart-text-style"><b>My Cart</b></div>
+  <div class="cart-text-style"><b>My Cart</b></div>
+  <div *ngFor="let item of cartItems" class="cart-items-container">
+    <div *ngIf="item.book" class="book-image-info">
+      <img [src]="item.book.bookLogo" alt="Book Image" class="book-image">
+      <div class="book-info">
+        <h2 class="book-title">{{ item.book.bookName }}</h2>
+        <p class="author-name">{{ item.book.authorName }}</p>
+        <p class="book-price">Rs.{{ item.totalPrice }}</p>
+      </div>
+    </div>
+    <div class="add-remove-icons">
+      <button class="plus-icon">+</button>
+      <input type="number" class="quantity-bar" [(ngModel)]="item.quantity">
+      <button class="minus-icon">-</button>
+      <button class="remove-text" (click)="removeItem(item.cartId) ">Remove</button>
+    </div>
    
+  </div>
+  <div >
+    <button class="place-button">Place Order</button>
+  </div>
+
+</div>
+
+
+
+
+    <!-- <div class="cart-text-style"><b>My Cart</b></div>
+   <div>
     <div class="book-image-info">
     <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
     <div class="book-info">
@@ -22,12 +50,49 @@
  <div class="remove-text">Remove</div>
 
 </div>
+</div>
+
+<div>
+  <div class="book-image-info">
+  <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
+  <div class="book-info">
+    <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
+    <p class="author-name">Lukesh</p>
+    <p class="book-price">Rs.750</p>
+  </div>
+</div>
+<div class="add-remove-icons">
+<button class="plus-icon">+</button>
+<input type="number" class="quantity-bar">
+<button class="minus-icon">-</button>
+<div class="remove-text">Remove</div>
+
+</div>
+
+<div>
+  <div class="book-image-info">
+  <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
+  <div class="book-info">
+    <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
+    <p class="author-name">Lukesh</p>
+    <p class="book-price">Rs.750</p>
+  </div>
+</div>
+<div class="add-remove-icons">
+<button class="plus-icon">+</button>
+<input type="number" class="quantity-bar">
+<button class="minus-icon">-</button>
+<div class="remove-text">Remove</div>
+
+</div>
+</div>
+</div>
 
 
    <div >
     <button class="place-button">Place Order</button>
-  </div>
-  </div>
+  </div> -->
+ 
 
   <div class="user-details-box">
     <div class="customer-text-style"><b>Customer Details</b></div>

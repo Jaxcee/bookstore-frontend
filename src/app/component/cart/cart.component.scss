@@ -15,6 +15,9 @@
     background: rgba(255, 255, 255, 0.24);
     border: 1px solid #707070;
     border-radius: 1px;
+    min-height: 241px; /* Minimum height to accommodate at least one item */
+    max-height: 70vh; /* Adjust based on your design requirements */
+    overflow-y: auto; /* Enables scrolling for overflow */
     
 }
 .cart-text-style{
@@ -244,12 +247,17 @@ margin-left: 30px;
   margin-left: auto; /* Aligns the button to the right */
   margin-top: 20px; /* Spacing from the last item */
 }
-.cart-body{
-  
-    height: auto;
-    padding-bottom: 25px;
-    
+.cart-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .cart-container{
   overflow: hidden;
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust gap between items */
 }
