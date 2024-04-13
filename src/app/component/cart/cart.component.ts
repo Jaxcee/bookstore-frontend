@@ -43,20 +43,31 @@ throw new Error('Method not implemented.');
 
   }
 
-  removeItem(cartId:any): void {
-    // const cartId = 28;
-    // this.http.delete(`http://localhost:8080/cart/remove/${cartId}`).subscribe({
-    //   next: () => {
-    //     // Remove the item from the cartItems array to update UI
-    //     this.cartItems = this.cartItems.filter(item => item.cartId !== cartId);
-    //     console.log('Item removed successfully');
-    //   },
-    //   error: (error) => {
-    //     console.error('Error removing item from cart', error);
-    //   }
-    // });
-    console.log(cartId)
+  removeItem(cartId:number): void {
+    
+    this.http.delete(`http://localhost:8080/cart/remove/${cartId}`).subscribe({
+      next: () => {
+        // Remove the item from the cartItems array to update UI
+        this.cartItems = this.cartItems.filter(item => item.cartId !== cartId);
+        console.log('Item removed successfully');
+      },
+      error: (error) => {
+        console.error('Error removing item from cart', error);
+      }
+    });
+    
   }
-  
+  decrease(book : any){
+    if(book.quantity > 1){
+      book.quantity--;
+      
+    }
+    
+    
+  }
+  increase(book : any){
+    book.quantity++;
+    
+  }
   
 }

@@ -14,9 +14,9 @@
                 <p>{{ item.book.authorName }}</p>
                 <p>Rs.{{ item.totalPrice }}</p>
                 <div class="item-controls">
-                    <button (click)="decreaseQuantity(item)">-</button>
+                    <button (click)="decrease(item)">-</button>
                     <span>{{ item.quantity }}</span>
-                    <button (click)="increaseQuantity(item)">+</button>
+                    <button (click)="increase(item)">+</button>
                     <button (click)="removeItem(item.cartId)">Remove</button>
                 </div>
             </div>
