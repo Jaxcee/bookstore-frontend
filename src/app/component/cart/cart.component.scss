@@ -1,263 +1,146 @@
-.cart-container{
-  min-height: auto;
+.cart-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 70px auto 10px; /* Adjust the top margin to push it down below the header */
+  width: 50%; /* Adjust width as necessary */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background-color: #fff;
   position: relative;
   
 }
-
-
-.cart-container-style {
-    position: absolute;
-    
-    top: 112px;
-    left: 177px;
-    width: 774px;
-    height: 241px;
-    background: rgba(255, 255, 255, 0.24);
-    border: 1px solid #707070;
-    border-radius: 1px;
-    min-height: 241px; /* Minimum height to accommodate at least one item */
-    max-height: 70vh; /* Adjust based on your design requirements */
-    overflow-y: auto; /* Enables scrolling for overflow */
-    
-}
-.cart-text-style{
-    margin-left: 30px;
-    margin-top: 18px;
-    top: 130px;
-    left: 213px;
-    width: 85px;
-    height: 22px;
-    text-align: left;
-    font: normal normal medium 18px/22px Lato;
-    letter-spacing: 0px;
-    color: #000000;
-
+.cart-header h2 {
+  text-align: left;
+  font-size: 16px; /* Further reduce font size */
+  margin-bottom: 10px; /* Reduce spacing */
 }
 
-.book-image {
-    width: 65px;
-    height: 85px;
-    margin-left: 30px;
-    margin-top: 20px;
-  }
-  
-
-  .place-button{
-    top: 308px;
-    left: 772px;
-    width: 151px;
-    height: 35px;
-    cursor:pointer;
-    background: #3371B5 0% 0% no-repeat padding-box;
-    border-radius: 2px;
-    opacity: 1;
-    color: white;
-    border: none;
-    margin-left: 595px;
-    margin-top: -50px;
-  }
-
-  .book-image-info{
-    flex-direction: row;
-    display :flex;
-  }
-  .book-title {
-    font-size: 14px;
-    line-height: 17px;
-    color: #0A0102;
-    margin-bottom: 10px;
-  }
-  
-  .author-name {
-    font-size: 10px;
-    line-height: 12px;
-    color: #9D9D9D;
-    margin-bottom: 10px;
-  }
-  
-  .book-price {
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    color: #0A0102;
-    margin-bottom: 20px; /* Adjusted for consistent spacing */
-  }
-  .book-info{
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-.plus-icon {
-  width: 24px;
-  height: 24px;
-  background: #FAFAFA 0% 0% no-repeat padding-box;
-  border: 1px solid #DBDBDB;
-  opacity: 1;
-  border-radius: 100px;
-  text-align: center;
-  margin-right: 8px; /* Add left margin to the plus icon */
-}
-
-.minus-icon {
-  width: 24px;
-  height: 24px;
-  background: #FAFAFA 0% 0% no-repeat padding-box;
-  border: 1px solid #DBDBDB;
-  opacity: 1;
-  text-align: center;
-  margin-left: 8px; /* Add right margin to the minus icon */
-}
-
-.quantity-bar {
-  width: 30px;
-  height: 20px;
-}
-
-.add-remove-icons {
-  flex-direction: row;
+.cart-items {
   display: flex;
-  margin-left: 100px;
-  margin-top: -10px;
+  flex-direction: column;
+  overflow-y: auto; /* Allows scrolling within the cart items */
+    max-height: 400px; /* Adjust based on your design needs */
 }
-.remove-text{
-  margin-left: 20px;
-  margin-top: -1px;
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.cart-item-image {
+  width: 60px; /* Further reduce image size */
+  height: 90px; /* Adjust height accordingly */
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  font-size: 12px; /* Reduce font size for item details */
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  font-size: 12px; /* Smaller font for controls */
+}
+
+.item-controls button {
+  padding: 3px 6px; /* Smaller padding for buttons */
+  margin: 0 3px; /* Reduce spacing between buttons */
+  background-color: #e9ecef;
+  border: 1px solid #d1d3d4;
+  cursor: pointer;
+}
+
+.checkout-button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 30%;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 70%;
+}
+
+
+.content { /* This should be the container wrapping everything except the header and footer */
+  flex: 1 0 auto; /* It grows to take available space but not shrink */
+  padding: 20px;
+  overflow-y: auto; /* Makes it scrollable when content overflows */
 }
 
 .user-details-box {
-  margin-left: 180px;
-  margin-top: 400px;
-  width: 774px;
-  height: 416px;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
-  border-radius: 1px;
-  opacity: 1;
-}
-
-.customer-text-style{
-  width: 115px;
-height: 18px;
-/* UI Properties */
-text-align: left;
-font: normal normal normal 15px/18px Lato;
-letter-spacing: 0px;
-color: #333232;
-opacity: 1;
-
-margin-top: 30px;
-margin-left: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px auto; /* Adjust margins to ensure no overlap */
+  width: 50%; /* Match the width of the cart box */
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .example-form {
   display: flex;
   flex-direction: column;
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-  margin-left: 80px;
-  margin-top:30px;
 }
 
 .form-row {
   display: flex;
   justify-content: space-between;
-  gap: 16px; /* Controls the space between inputs */
+  margin-bottom: 10px;
+  
 }
 
-.form-row label,
-.address-field label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.example-full-width,
-.address-field textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px; /* Space between each form field */
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.example-full-width {
+  flex: 1;
+  margin-right: 10px; /* Add space between inputs */
 }
 
 .address-field {
-  margin-bottom: 16px;
-}
-.order-details-box {
-  position: relative;
-  top: 20px; /* Adjust as needed for spacing from the previous section */
-  left: 0; /* Aligned with the container's left edge */
-  width: 774px;
-  background: rgba(255, 255, 255, 0.24);
-  border: 1px solid #707070;
-  border-radius: 1px;
-  padding: 20px; /* Added padding for internal spacing */
-  margin-left: 177px; /* Align with the cart container */
-  margin-top: 20px; /* Space from the previous content */
+  margin-bottom: 10px;
 }
 
-.additional-text-style {
-  margin-left: 30px;
-  margin-top: 18px;
-  font: normal normal medium 18px/22px Lato;
-  color: #000000;
-}
-
-.additional-content-info {
-  display: flex;
-  margin-top: 20px;
-}
-
-.additional-info {
-  margin-left: 20px;
-}
-
-.additional-image {
-  width: 65px;
-  height: 85px;
-}
-
-.additional-action-icons {
-  display: flex;
-  margin-left: 100px;
-  margin-top: 20px;
-}
-
-.additional-plus-icon, .additional-minus-icon {
-  width: 24px;
-  height: 24px;
-  background: #FAFAFA;
-  border: 1px solid #DBDBDB;
-  border-radius: 100px;
+.customer-text-style {
   text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.example-full-width, textarea.example-full-width {
+  padding: 10px; /* Comfortable padding for text input */
+  border-radius: 2px; /* Curved edges */
+  border: 1px solid #ccc; /* Subtle border color */
+  outline: none; /* Remove focus outline */
+  margin-left: 10px
 }
 
-.additional-quantity-bar {
-  width: 30px;
-  height: 20px;
+.example-full-width:focus, textarea.example-full-width:focus {
+  border-color: #007bff; /* Highlight color on focus */
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25); /* Soft glow effect */
 }
 
-.additional-place-button {
-  background: #3371B5;
-  color: white;
-  border-radius: 2px;
-  border: none;
-  width: 151px;
-  height: 35px;
-  cursor: pointer;
-  margin-left: auto; /* Aligns the button to the right */
-  margin-top: 20px; /* Spacing from the last item */
-}
-.cart-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.cart-container{
-  overflow: hidden;
+.order-summary-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px auto; /* Adjust spacing as needed */
+  width: 50%; /* Match the width of the other boxes */
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.cart-items-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Adjust gap between items */
+.order-summary-header {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.order-summary-content {
+  /* Styles for the content inside the summary box */
+  font-size: 14px; /* Smaller font size for content */
+  padding: 10px;
+  line-height: 1.5; /* Improved readability */
 }

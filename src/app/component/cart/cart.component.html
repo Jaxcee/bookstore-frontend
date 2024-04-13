@@ -1,100 +1,33 @@
-<div class="cart-items-container">
-
-<app-header> </app-header>
-
-<div class="cart-body">
-
-<!-- cart.component.html -->
-<div class="cart-container-style">
-  <div class="cart-text-style"><b>My Cart</b></div>
-  <div *ngFor="let item of cartItems" class="cart-items-container">
-    <div *ngIf="item.book" class="book-image-info">
-      <img [src]="item.book.bookLogo" alt="Book Image" class="book-image">
-      <div class="book-info">
-        <h2 class="book-title">{{ item.book.bookName }}</h2>
-        <p class="author-name">{{ item.book.authorName }}</p>
-        <p class="book-price">Rs.{{ item.totalPrice }}</p>
-      </div>
-    </div>
-    <div class="add-remove-icons">
-      <button class="plus-icon">+</button>
-      <input type="number" class="quantity-bar" [(ngModel)]="item.quantity">
-      <button class="minus-icon">-</button>
-      <button class="remove-text" (click)="removeItem(item.cartId) ">Remove</button>
-    </div>
-   
-  </div>
-  <div >
-    <button class="place-button">Place Order</button>
-  </div>
-
-</div>
-
-
-
-
-    <!-- <div class="cart-text-style"><b>My Cart</b></div>
-   <div>
-    <div class="book-image-info">
-    <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
-    <div class="book-info">
-      <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
-      <p class="author-name">Lukesh</p>
-      <p class="book-price">Rs.750</p>
-    </div>
-</div>
-<div class="add-remove-icons">
-  <button class="plus-icon">+</button>
-  <input type="number" class="quantity-bar">
-  <button class="minus-icon">-</button>
- <div class="remove-text">Remove</div>
-
-</div>
-</div>
-
-<div>
-  <div class="book-image-info">
-  <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
-  <div class="book-info">
-    <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
-    <p class="author-name">Lukesh</p>
-    <p class="book-price">Rs.750</p>
-  </div>
-</div>
-<div class="add-remove-icons">
-<button class="plus-icon">+</button>
-<input type="number" class="quantity-bar">
-<button class="minus-icon">-</button>
-<div class="remove-text">Remove</div>
-
-</div>
-
-<div>
-  <div class="book-image-info">
-  <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
-  <div class="book-info">
-    <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
-    <p class="author-name">Lukesh</p>
-    <p class="book-price">Rs.750</p>
-  </div>
-</div>
-<div class="add-remove-icons">
-<button class="plus-icon">+</button>
-<input type="number" class="quantity-bar">
-<button class="minus-icon">-</button>
-<div class="remove-text">Remove</div>
-
-</div>
-</div>
-</div>
-
-
-   <div >
-    <button class="place-button">Place Order</button>
-  </div> -->
+<!-- Cart Container -->
  
+<app-header></app-header>
 
-  <div class="user-details-box">
+<div class="cart-box">
+    <div class="cart-header">
+        <h2>My Cart</h2>
+    </div>
+    <div class="cart-items">
+        <div *ngFor="let item of data" class="cart-item">
+            <img [src]="item.book.bookLogo" alt="{{ item.book.bookName }}" class="cart-item-image">
+            <div class="cart-item-details">
+                <h3>{{item. book?.bookName }}</h3>
+                <p>{{ item.book.authorName }}</p>
+                <p>Rs.{{ item.totalPrice }}</p>
+                <div class="item-controls">
+                    <button (click)="decreaseQuantity(item)">-</button>
+                    <span>{{ item.quantity }}</span>
+                    <button (click)="increaseQuantity(item)">+</button>
+                    <button (click)="removeItem(item.cartId)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <button class="checkout-button">Place Order</button>
+    </div>
+</div>
+
+<div class="user-details-box">
     <div class="customer-text-style"><b>Customer Details</b></div>
    
     <form class="example-form">
@@ -127,30 +60,19 @@
         <input type="text" id="landmark" class="example-full-width">
       </div>
     </form>
-  </div>
-
-  <div class="order-details-box">
-    <div class="order-header-style"><b>Order Summary</b></div>
-    
-    <div class="book-image-info">
-      <img src="../../../assets/bookimages/thirteen-reasons-why.jpg" class="book-image">
-      <div class="book-info">
-        <h2 class="book-title">THIRTEEN REASONS WHY?</h2>
-        <p class="author-name">Lukesh</p>
-        <p class="book-price">Rs.750</p>
-      </div>
-  </div>
-
-  
-  
-     <div >
-      <a routerLink="/orderplaced">
-      <button class="place-button">Check Out</button>
-    </a>
-    </div>
-  </div>
-
 </div>
+
+<div class="order-summary-box">
+  <div class="order-summary-header">
+      <b>Order Summary</b>
+  </div>
+  <div class="order-summary-content">
+      <!-- Content will be added here -->
+  </div>
+</div>
+
+
+
+
 
 <app-footer> </app-footer>
-</div>

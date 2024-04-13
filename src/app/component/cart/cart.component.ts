@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-cart',
@@ -7,6 +7,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  data: any;
+
+increaseQuantity(_t9: any) {
+throw new Error('Method not implemented.');
+}
+decreaseQuantity(_t9: any) {
+throw new Error('Method not implemented.');
+}
   cartItems: any[] = [];  // Assuming this gets populated either from an API call or local storage
 
   constructor(private http: HttpClient) {}
@@ -16,26 +24,23 @@ export class CartComponent implements OnInit {
   }
 
   loadCartItems() {
-    const userId = 152;
-    this.http.get<any[]>(`http://localhost:8080/cart/allForUser/${userId}`).subscribe(
-      (data: any[]) => {
-        // For each item in the cart, fetch complete book details
-        data.forEach(item => {
-          this.http.get<any>(`http://localhost:8080/books/${item.bookId}`).subscribe(
-            (bookDetails: any) => {
-              // Merge book details with cart item
-              const cartItem = {
-                ...item,
-                book: bookDetails // Assuming book details include name, author, price, and image URL
-              };
-              this.cartItems.push(cartItem);
-            },
-            error => console.error('Failed to fetch book details', error)
-          );
-        });
-      },
-      error => console.error('Failed to load cart items', error)
-    );
+    const token = localStorage.getItem('token'); // Retrieve the JWT token from local storage
+    if (!token) {
+      console.error('JWT token is not available in local storage.');
+      return;
+    }
+    
+    // Set up the HTTP headers
+    const headers = new HttpHeaders().set('token', `${token}`);
+
+    // Assuming the backend service is setup to extract the userId from the token and return the appropriate data
+    const url = 'http://localhost:8080/cart/allcartitems';
+    
+    this.http.get<any[]>(url, { headers }).subscribe((response)=>{
+      this.data= response;
+      console.log('cart Data' , this.data);
+    });
+
   }
 
   removeItem(cartId:any): void {
@@ -52,4 +57,6 @@ export class CartComponent implements OnInit {
     // });
     console.log(cartId)
   }
+  
+  
 }

@@ -1,10 +1,21 @@
-.bottom {
-    background-color: #2E1D1E;
-    padding: 10px;
-    font-family: Lato;
-    padding-left: 90px;
-    color: white;
-    bottom: 0px;
-    width: 100%;
-    position: relative;
+.main-body{
+    height: 40px;
+    /* max-width: 1248px; */
+    
+    
+    padding-left: 230px;
+    background: #2E1D1E 0% 0% no-repeat padding-box;
+    opacity: 1;
+    
 }
+
+.footer-font-Color{
+    
+    text-align: left;
+    font: normal normal medium 12px/15px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+
+
