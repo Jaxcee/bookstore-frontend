@@ -7,6 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+
+  
   data: any;
   customerDetails = {
     firstName: '',
@@ -19,14 +21,11 @@ export class CartComponent implements OnInit {
     landmark: ''
   };
 
+  
 
 
-increaseQuantity(_t9: any) {
-throw new Error('Method not implemented.');
-}
-decreaseQuantity(_t9: any) {
-throw new Error('Method not implemented.');
-}
+
+
   cartItems: any[] = []; 
   total: number = 0; // Assuming this gets populated either from an API call or local storage
 
@@ -52,7 +51,9 @@ throw new Error('Method not implemented.');
     this.http.get<any[]>(url, { headers }).subscribe((response)=>{
       this.data= response;
       console.log('cart Data' , this.data);
-      this.total = this.cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      this.calculateTotal();
+      console.log(this.total);
+      
     });
 
   }
@@ -64,6 +65,7 @@ throw new Error('Method not implemented.');
         // Remove the item from the cartItems array to update UI
         this.cartItems = this.cartItems.filter(item => item.cartId !== cartId);
         console.log('Item removed successfully');
+        this.calculateTotal();
       },
       error: (error) => {
         console.error('Error removing item from cart', error);
@@ -124,6 +126,10 @@ throw new Error('Method not implemented.');
       next: (response) => console.log('Order placed successfully', response),
       error: (error) => console.error('Error placing order', error)
     });
+  }
+
+  calculateTotal() {
+    this.total = this.data.reduce((acc:number, item:any) => acc + item.totalPrice, 0);
   }
 }
 
