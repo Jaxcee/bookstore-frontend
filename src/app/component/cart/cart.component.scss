@@ -144,3 +144,30 @@
   padding: 10px;
   line-height: 1.5; /* Improved readability */
 }
+.cart-items-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-item {
+  margin-bottom: 20px; /* Adjust the gap between items */
+}
+
+.ordersummary-book-component {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-image {
+  width: 100px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Adjust the gap between image and text */
+}
+
+.book-info {
+  flex: 1; /* Allow the text to expand to fill available space */
+}
+
+.checkout-button {
+  margin-top: 20px; /* Adjust as needed */
+}

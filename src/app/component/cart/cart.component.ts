@@ -8,6 +8,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CartComponent implements OnInit {
   data: any;
+  customerDetails = {
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    pincode: '',
+    locality: '',
+    address: '',
+    cityTown: '',
+    landmark: ''
+  };
+
+
 
 increaseQuantity(_t9: any) {
 throw new Error('Method not implemented.');
@@ -15,7 +27,8 @@ throw new Error('Method not implemented.');
 decreaseQuantity(_t9: any) {
 throw new Error('Method not implemented.');
 }
-  cartItems: any[] = [];  // Assuming this gets populated either from an API call or local storage
+  cartItems: any[] = []; 
+  total: number = 0; // Assuming this gets populated either from an API call or local storage
 
   constructor(private http: HttpClient) {}
 
@@ -39,6 +52,7 @@ throw new Error('Method not implemented.');
     this.http.get<any[]>(url, { headers }).subscribe((response)=>{
       this.data= response;
       console.log('cart Data' , this.data);
+      this.total = this.cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
     });
 
   }
@@ -69,5 +83,48 @@ throw new Error('Method not implemented.');
     book.quantity++;
     
   }
-  
+
+  submitCustomerDetails(form: any) {
+    if (form.valid) {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        console.error('JWT token is not available in local storage.');
+        return;
+      }
+
+      const headers = new HttpHeaders().set('token', `${token}`);
+      const url = 'http://localhost:8080/customer/store';
+
+      this.http.post(url, this.customerDetails, { headers }).subscribe({
+        next: (response) => console.log('Customer details stored successfully', response),
+        error: (error) => console.error('Error storing customer details', error)
+      });
+    } else {
+      console.error('Form is not valid!');
+    }
+  }
+
+  placeOrder() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.error('JWT token is not available in local storage.');
+      return;
+    }
+
+    const orderDetails = {
+      cartItems: this.cartItems,
+      customerDetails: this.customerDetails,
+      total: this.total
+    };
+
+    const headers = new HttpHeaders().set('token', `${token}`);
+    const url = 'http://localhost:8080/orders/placeOrder';
+
+    this.http.post(url, orderDetails, { headers }).subscribe({
+      next: (response) => console.log('Order placed successfully', response),
+      error: (error) => console.error('Error placing order', error)
+    });
+  }
 }
+
+

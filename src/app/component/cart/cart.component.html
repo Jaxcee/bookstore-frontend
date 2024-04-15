@@ -23,43 +23,45 @@
         </div>
     </div>
     <div class="cart-footer">
-        <button class="checkout-button">Place Order</button>
+        <button class="checkout-button" >Place Order</button>
     </div>
 </div>
 
 <div class="user-details-box">
-    <div class="customer-text-style"><b>Customer Details</b></div>
-   
-    <form class="example-form">
-      <div class="form-row">
-        <label for="name">Name</label>
-        <input type="text" id="name" class="example-full-width">
+  <div class="customer-text-style"><b>Customer Details</b></div>
+ 
+  <form class="example-form" (ngSubmit)="submitCustomerDetails(customerForm)" #customerForm="ngForm">
+    <div class="form-row">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="example-full-width" [(ngModel)]="customerDetails.firstName" name="firstName" required>
+  
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" id="phoneNumber" class="example-full-width" [(ngModel)]="customerDetails.phoneNumber" name="phoneNumber" required>
+    </div>
+  
+    <div class="form-row">
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" class="example-full-width" [(ngModel)]="customerDetails.pincode" name="pincode" required>
+  
+      <label for="locality">Locality</label>
+      <input type="text" id="locality" class="example-full-width" [(ngModel)]="customerDetails.locality" name="locality" required>
+    </div>
+  
+    <div class="address-field">
+      <label for="address">Address</label>
+      <textarea id="address" class="example-full-width" [(ngModel)]="customerDetails.address" name="address" required></textarea>
+    </div>
+  
+    <div class="form-row">
+      <label for="cityTown">City/Town</label>
+      <input type="text" id="cityTown" class="example-full-width" [(ngModel)]="customerDetails.cityTown" name="cityTown" required>
+  
+      <label for="landmark">LandMark</label>
+      <input type="text" id="landmark" class="example-full-width" [(ngModel)]="customerDetails.landmark" name="landmark" required>
+    </div>
     
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" id="phoneNumber" class="example-full-width">
-      </div>
-    
-      <div class="form-row">
-        <label for="pincode">Pincode</label>
-        <input type="text" id="pincode" class="example-full-width">
-    
-        <label for="locality">Locality</label>
-        <input type="text" id="locality" class="example-full-width">
-      </div>
-    
-      <div class="address-field">
-        <label for="address">Address</label>
-        <textarea id="address" class="example-full-width"></textarea>
-      </div>
-    
-      <div class="form-row">
-        <label for="cityTown">City/Town</label>
-        <input type="text" id="cityTown" class="example-full-width">
-    
-        <label for="landmark">LandMark</label>
-        <input type="text" id="landmark" class="example-full-width">
-      </div>
-    </form>
+    <button class="checkout-button" type="submit">Continue</button>
+  </form>
 </div>
 
 <div class="order-summary-box">
@@ -67,7 +69,29 @@
       <b>Order Summary</b>
   </div>
   <div class="order-summary-content">
-      <!-- Content will be added here -->
+    <h2>Order Summary</h2>
+    <h3>Customer Delivery Details</h3>
+    <p>{{ customerDetails.firstName }} {{ customerDetails.lastName }}
+    {{ customerDetails.address }}  {{ customerDetails.locality }}  {{ customerDetails.cityTown }}
+    {{ customerDetails.pincode }}</p>
+  
+    <h3>Cart Items</h3>
+  <ul class="cart-items-list">
+    <li *ngFor="let item of data" class="cart-item">
+      <div class="ordersummary-book-component">
+        <img [src]="item.book.bookLogo" alt="{{ item.book.bookName }}" class="cart-item-image"> 
+        <div class="book-info">
+          <div>{{ item.book.bookName }}</div>
+          <div>Quantity: {{ item.quantity }}</div> 
+          <div>Price: Rs.{{ item.totalPrice }}</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  
+  <p><strong>Total:</strong> Rs.{{ total }}</p>
+
+  <button class="checkout-button" (click)="placeOrder()">Check Out</button>
   </div>
 </div>
 
