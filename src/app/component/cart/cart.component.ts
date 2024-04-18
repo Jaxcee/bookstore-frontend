@@ -53,6 +53,8 @@ export class CartComponent implements OnInit {
       console.log('cart Data' , this.data);
       this.calculateTotal();
       console.log(this.total);
+     
+
       
     });
 
@@ -100,6 +102,7 @@ export class CartComponent implements OnInit {
       this.http.post(url, this.customerDetails, { headers }).subscribe({
         next: (response) => console.log('Customer details stored successfully', response),
         error: (error) => console.error('Error storing customer details', error)
+        
       });
     } else {
       console.error('Form is not valid!');
@@ -112,25 +115,26 @@ export class CartComponent implements OnInit {
       console.error('JWT token is not available in local storage.');
       return;
     }
-
+  
     const orderDetails = {
-      cartItems: this.cartItems,
-      customerDetails: this.customerDetails,
-      total: this.total
+      bookIds: this.data.map((item: { book: { bookId: number } }) => item.book.bookId),
     };
-
+  
     const headers = new HttpHeaders().set('token', `${token}`);
     const url = 'http://localhost:8080/orders/placeOrder';
+    console.log('Order Details:', orderDetails);
 
     this.http.post(url, orderDetails, { headers }).subscribe({
       next: (response) => console.log('Order placed successfully', response),
       error: (error) => console.error('Error placing order', error)
     });
   }
+  
 
   calculateTotal() {
     this.total = this.data.reduce((acc:number, item:any) => acc + item.totalPrice, 0);
   }
+  
 }
 
 

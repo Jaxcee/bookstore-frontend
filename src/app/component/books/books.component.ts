@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class BooksComponent {
   books: any[] = [];  // Assuming this gets populated from an API call to /books
+  addedToCartIds: Set<number> = new Set();
    // Update with your correct endpoint
 
   constructor(private http: HttpClient) {}
@@ -48,6 +49,7 @@ export class BooksComponent {
     this.http.post<any>(url, cartData, { headers  }).subscribe(
         response => {
             console.log('Response from addToCart:', response );
+            this.addedToCartIds.add(bookId);
             // Assuming `addedToCartIds` tracks added items
         },
         error => {
