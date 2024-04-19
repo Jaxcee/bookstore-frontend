@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -29,7 +30,7 @@ export class CartComponent implements OnInit {
   cartItems: any[] = []; 
   total: number = 0; // Assuming this gets populated either from an API call or local storage
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient , private router: Router) {}
 
   ngOnInit() {
     this.loadCartItems();
@@ -109,27 +110,31 @@ export class CartComponent implements OnInit {
     }
   }
 
-  placeOrder() {
+  order() {
     const token = localStorage.getItem('token');
     if (!token) {
       console.error('JWT token is not available in local storage.');
       return;
     }
-  
+
     const orderDetails = {
       bookIds: this.data.map((item: { book: { bookId: number } }) => item.book.bookId),
     };
-  
+
     const headers = new HttpHeaders().set('token', `${token}`);
     const url = 'http://localhost:8080/orders/placeOrder';
     console.log('Order Details:', orderDetails);
 
     this.http.post(url, orderDetails, { headers }).subscribe({
-      next: (response) => console.log('Order placed successfully', response),
-      error: (error) => console.error('Error placing order', error)
+      next: (response) => {
+        console.log('Order placed successfully', response);
+        this.router.navigate(['/orderplaced']); // Use the router to navigate
+      },
+      error: (error) => {
+        console.error('Error placing order', error);
+      }
     });
   }
-  
 
   calculateTotal() {
     this.total = this.data.reduce((acc:number, item:any) => acc + item.totalPrice, 0);

@@ -6,10 +6,27 @@
     <h1>Bookstore</h1>
   </div>
 </div>
+<input type="search" class="search-bar" placeholder="Search...">
+
+<div class="user-actions">
+    
+  <div class="dropdown">
+    <img class="user-icon" src="../../../assets/logo/icons8-user-24.png" alt="user-icon">
+    <div class="dropdown-content">
+      <a (click)="logout()">Logout</a>
+      <a routerLink="/login">Login</a>
+    </div>
+  </div>
+</div>
+
   <span class="cart-text">Cart</span> 
-  <input type="search" class="search-bar" placeholder="Search...">
+  
   <a routerLink="/cart">
     <img class="cart-icon"  src="../../../assets/logo/supermarket.png" alt="addtocart">
 
   </a>
+  
+
+
+
 </header>

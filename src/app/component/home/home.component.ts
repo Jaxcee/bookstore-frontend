@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  searchText: string = '';
 
+  filterBooks(searchValue: string): void {
+    this.searchText = searchValue;
+  }
 }

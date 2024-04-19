@@ -30,6 +30,7 @@ export class BooksComponent {
     const token = localStorage.getItem('token');
     if (!token) {
         console.error('Authentication token is not available');
+        alert("Login to add to cart")
         return;
     }
 
@@ -57,4 +58,5 @@ export class BooksComponent {
         }
     );
 }
+
 }
